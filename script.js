@@ -1,4 +1,5 @@
-var tl=gsap.timeline();
+function loadingAnimation(){
+    var tl=gsap.timeline();
 tl.from(".line h1",{
     y:150,
     stagger:.25,
@@ -28,7 +29,7 @@ tl.to(".line h2",{
 })
 tl.to("#loader",{
     opacity:0,
-    delay:4,
+    delay:3,
     duration:0.2
 })
 tl.from("#page1",{
@@ -41,3 +42,5 @@ tl.from("#page1",{
 tl.to("#loader",{
     display:"none"
 })
+}
+loadingAnimation();
