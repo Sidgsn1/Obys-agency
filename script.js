@@ -14,7 +14,7 @@ tl.from("#line1-part1",{
         setInterval(function(){
             if(change<100){
                 counter.innerHTML=change++;
-                console.log(change)
+                // console.log(change)
             }
             else{
                 change=100;
@@ -34,7 +34,7 @@ tl.to("#loader",{
 })
 tl.from("#page1",{
     y:1600,
-    delay:0.2,
+    delay:0.1,
     opacity:0,
     duration:0.5,
     ease:Power4
@@ -42,5 +42,23 @@ tl.from("#page1",{
 tl.to("#loader",{
     display:"none"
 })
+tl.from("#nav",{
+    opacity:0
+})
+tl.from(".hero h1,#hero3 h2",{
+    y:120,
+    stagger:.2
+})
+}
+function cursorAnimation(){
+    document.addEventListener("mousemove",function(dets){
+        gsap.to("#crsr",{
+            left:dets.x,
+            top:dets.y
+        })
+    })
+    
+    Shery.makeMagnet("#nav-part2 h4");
 }
 loadingAnimation();
+cursorAnimation();
